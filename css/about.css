@@ -1,0 +1,143 @@
+
+.upper{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+    margin-left: 50px;
+    margin-right: 50px;
+    /* background-color:  #faebef; */
+    background-color: #f7f7f7;;
+    border-radius: 30px;
+    padding: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.lower {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 1rem;
+  margin: 50px;
+   /* background-color:#e7ecfd;
+  */
+  background-color: #f7f7f7;;
+    border-radius: 30px;
+    padding: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.image{
+    margin-top: 50px;
+}
+.upper .image img{
+   
+        width: 480px;
+        height: 274px;
+        border-radius: 2%;
+        object-fit: contain;
+        background-color: white;
+        border: 3px grey solid;
+        
+}
+
+.upper .info {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 2rem;
+  border-radius: 10px;
+ 
+}
+.lower .info {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0rem 2rem;
+    border-radius: 10px;
+  }
+
+.lower .info h3 {
+  font-size: 30px;
+  color: #f1cc52;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+.upper .info h3 {
+    font-size: 30px;
+    color: #2f4aab;
+    font-weight: 900;
+    margin-bottom: 10px;
+  }
+.head1 {
+  text-decoration: white;
+}
+.info p {
+
+  font-size: 20px;
+  text-align: justify;
+  color: #6d6d6d;
+}
+.slider {
+  display: flex;
+  align-items: center;
+  padding-top: 3.5rem;
+}
+.slider img {
+  width: 480px;
+  height: 450px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+/* ------------------------------------ */
+@media (max-width: 768px) {
+  .upper {
+    flex-direction: column;
+    margin-bottom: 0rem;
+  }
+  #logo {
+    width: 50%;
+  }
+  .image {
+    width: 18rem;
+    height: 14rem;
+  }
+  .camp {
+    top: 1.2rem;
+    left: 3rem;
+  }
+  .info {
+    width: 85%;
+    padding: 0rem 1.7rem;
+  }
+  .info h1 {
+    font-size: 2rem;
+  }
+  .info p {
+    font-size: 1rem;
+  }
+  .slider {
+    justify-content: center;
+    padding-top: 2rem;
+  }
+  .slider img {
+    width: 18rem;
+    height: 14rem;
+  }
+  .lower {
+    flex-direction: column-reverse;
+  }
+}

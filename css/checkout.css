@@ -1,0 +1,150 @@
+.container{
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 1200px)
+{
+  .container{
+    max-width: 1280px;
+  }
+}
+.d-flex{
+  display: flex;
+  flex-direction: row;
+  background: #f6f6f6;
+  border-radius: 0 0 5px 5px;
+  padding: 25px;
+  height: auto;
+  width: auto;
+}
+.d-flex form{
+  flex: 4;
+}
+.Yorder{
+  flex: 2;
+}
+.container .title{
+  background-color: #2f4aab;
+  border-radius:5px 5px 0 0 ;
+  padding: 20px;
+  color: #f6f6f6;
+}
+h2{
+  margin: 0;
+  padding-left: 15px; 
+}
+.required{
+  color: red;
+}
+.d-flex .entry,.d-flex table{
+  display: block;
+  margin: 15px;
+}
+label>span{
+  float: left;
+  width: 25%;
+  margin-top: 12px;
+  padding-right: 10px;
+}
+.d-flex input[type="text"],.d-flex input[type="number"],.d-flex input[type="email"],.d-flex select
+{
+  width: 70%;
+  height: 50px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  border: 1px solid #dadada;
+  color: black;
+}
+.d-flex select{
+  height: 50px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  color: black;
+}
+.Yorder{
+  margin-top: 15px;
+  height: auto;
+  padding: 15px;
+  border: 3px solid #dadada;
+}
+.Yorder table{
+  margin-left: 20px;
+  padding: 0;
+}
+.pay{
+    margin-left: 20px;
+}
+.Yorder th{
+  border-bottom: 1px solid #dadada;
+  padding: 10px 0;
+}
+.Yorder tr>td:nth-child(1){
+  text-align: left;
+  color: #2d2d2a;
+  width: 73%;
+}
+.Yorder tr>td:nth-child(2){
+  text-align: right;
+  color: #52ad9c;
+  
+}
+
+.Yorder td{
+  border-bottom: 1px solid #dadada;
+  padding: 15px 0 15px 0;
+}
+
+.Yorder>div{
+  padding: 15px 0; 
+}
+
+.plc{
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 30px;
+  background: #f1cc52;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+}
+.plc:hover{
+  cursor: pointer;
+  background: #e6c24b ;
+}
+form .error {
+    color: #ff0000;
+}
+form input{
+    color: black;
+}
+.response {
+  padding: 20px;
+  background-color: limegreen;
+  color: white;
+}
+.closebtn {
+  margin-left: 15px;
+  margin-top:5px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 30px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.closebtn:hover {
+  color: black;
+}
+.Yorder .img_fluid{
+  width: 70px;
+  height: 70px;
+  border:#dadada 2px solid;
+  padding:3px; 
+  object-fit: contain;
+}
