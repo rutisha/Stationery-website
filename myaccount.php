@@ -33,7 +33,7 @@ if(session_id() == '') {
   <div class="profile">
     <h2>Edit Profile</h2>
     <?php
-        $conn = mysqli_connect("localhost", "root", "", "s4u");
+        require('conn.php');
         $ID = $_SESSION["ID"];
         $sql = "SELECT * FROM `userdata` WHERE ID = '$ID' ";
         $result = $conn->query($sql);
@@ -68,7 +68,7 @@ if(session_id() == '') {
 <?php include "footer.php" ?>
 
 <?php 
- $conn = mysqli_connect("localhost", "root", "", "s4u");
+ require('conn.php');
       
  if($conn === false){
      die("ERROR: Could not connect. "

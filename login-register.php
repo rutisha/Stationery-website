@@ -66,7 +66,7 @@ if(session_id() == '') {
 
  <?php 
 $_SESSION['loggedIn'] = true;
- $conn = mysqli_connect("localhost", "root", "", "s4u");
+require('conn.php');
  // Check connection
  if($conn === false){
      die("ERROR: Could not connect. "
@@ -92,7 +92,7 @@ $_SESSION['loggedIn'] = true;
 
  ?> 
 <?php
-        $conn = mysqli_connect("localhost", "root", "", "s4u");
+       require('conn.php');
         // Check connection
         if($conn === false){
             die("ERROR: Could not connect. "
