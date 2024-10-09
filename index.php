@@ -1,38 +1,7 @@
 <?php
 if(session_id() == '') {
   session_start();
-} 
-if(isset($_SESSION['uname'])) {
-if(!isset($_GET["action"])) {
-        require('conn.php');
-        $Userid = $_SESSION["ID"];
-        $sql2 ="SELECT * FROM `wishlist` WHERE userid = $Userid";
-        $result2 = mysqli_query($conn,$sql2);
-        
-        if(mysqli_num_rows($result2) > 0){
-            foreach ( $result2 as $row2 ) {
-                $_SESSION["wishlist"] = unserialize($row2['wishlist_data']);
-              } }
-              else{
-               //echo "ERROR";
-               }
-            } 
-          
-            if(!isset($_GET["action"])) {
-            $Userid = $_SESSION["ID"];
-            $sql2 ="SELECT * FROM `cart` WHERE userid = $Userid";
-            $result2 = mysqli_query($conn,$sql2);
-            if(mysqli_num_rows($result2) > 0){
-                foreach ( $result2 as $row2 ) {
-                    $_SESSION["cart"] = unserialize($row2['cart_data']);
-                  } }
-                  else{
-                   //echo "ERROR";
-                   }} else{
-                    //echo "<center><b>Not Found</b></center>";
-                   }
-          }
-        
+}      
          ?>
 <?php include 'header.php';?>
 
@@ -121,7 +90,7 @@ if(!isset($_GET["action"])) {
           <div class="box">
             <div class="img-box">
               <img src="<?php echo "$row[product_image]"?>" alt="">
-              <a href="cart?action=add&id=<?php echo $row["ID"]; ?>" class="add_cart_btn">
+              <a href="cart.php?action=add&id=<?php echo $row["ID"]; ?>" class="add_cart_btn">
                 <span>
                 <input type="submit" name="add"  class="btn btn-default" style="color:white;" value="Add to Cart">
                 </span>
@@ -129,7 +98,7 @@ if(!isset($_GET["action"])) {
             </div>
             <div class="detail-box">
                 <h5>
-                <a href="prodetail?id=<?php echo $row["ID"]; ?>"><?php echo "$row[product_name]" ?> </a>
+                <a href="prodetail.php?id=<?php echo $row["ID"]; ?>"><?php echo "$row[product_name]" ?> </a>
               </h5>
               <div class="product_info">
                 <h5>

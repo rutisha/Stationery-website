@@ -112,7 +112,7 @@ require('conn.php');
         $_SESSION['loggedIn'] = true;
         if(!$_SESSION['uname'])  
         {  
-          header("Location: login-register"); 
+          header("Location: login-register.php"); 
          } 
 
          
@@ -125,7 +125,8 @@ require('conn.php');
        if($count == 1){  
         
         $_SESSION['ID']= $row["ID"]; 
-        echo '<script>window.location="index"</script>';
+        echo "<script>window.location.href = 'index.php';</script>";
+
            echo "<h6><center>Login successful</center></h6>";
           
            

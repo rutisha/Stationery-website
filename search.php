@@ -5,8 +5,13 @@ if(session_id() == '') {
 include 'header.php';?>
 
 <?php 
-  require('conn.php');
- $sql = "SELECT * FROM `products` ORDER BY ID DESC LIMIT 15";
+
+$Search = $_POST['search'];
+
+
+require('conn.php');
+ $sql = "SELECT * FROM `products` WHERE `product_name` LIKE '%".$Search."%' OR `description` LIKE '%".$Search."%'   OR `product_category` LIKE '%".$Search."%' ";
+
  $result = $conn->query($sql); 
  if ($result->num_rows > 0) {
   
@@ -14,19 +19,19 @@ include 'header.php';?>
 
 <section class="product_section layout_padding">
     <div class="container">
-      <div class="heading_container heading_center">
-             <h2>
-                   Our Products
-             </h2>
+      <div class="heading_container ">
+             <h3>
+                  Search Results for "<?php echo $Search; ?> "
+             </h3>
       </div>
       <div class="row">
         <?php  while($row = $result->fetch_assoc()) {  ?>
            <div class="col-sm-6 col-lg-4 probox morebox" style="display:none;" >
-           <form method="post" action="cart?action=add&id=<?php echo $row["ID"]; ?>">
+           <form method="post" action="cart.php?action=add&id=<?php echo $row["ID"]; ?>">
              <div class="box">
              
                 <div class="img-box" >
-                <img src="<?php echo "$row[product_image]"?>" alt="">
+                <img src="./admin/static/<?php echo "$row[product_image]"?>" alt="">
                 <a href="cart.php?action=add&id=<?php echo $row["ID"]; ?>" class="add_cart_btn">
                       <span>
                       <input type="submit" name="add"  class="btn btn-default" style="color:white;" value="Add to Cart">
@@ -39,7 +44,7 @@ include 'header.php';?>
                 </h5>
                   <div class="product_info">
                     <h5>
-                        <span>$</span> <?php echo "$row[product_price]" ?>
+                        <span>Rs</span> <?php echo "$row[product_price]" ?>
                     </h5>
                     <?php
                    if(isset($_SESSION["wishlist"])){
@@ -64,15 +69,20 @@ include 'header.php';?>
           <?php } ?>
         </div>
       <div class="btn_box" id="loadmore">
-        <a href="" class="view_more-link">
+        <a href="#" class="view_more-link">
           View More
         </a>
       </div>
-      <?php } ?>
+      <?php }  else {?>
+        <div class="notfound">
+            <img src="images/notfound.jpg" width="280px" height="260px"> <br>
+           <p> No Results Found !! </p> 
+           We couldn't find what you have searched for, <br>
+           Try searching again
+          </div>
+          <?php } ?>
     </div>
   </section>
-
-  
   <?php include 'footer.php';?>
   <script>
     jQuery(document).ready(($) => {
