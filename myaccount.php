@@ -8,22 +8,22 @@ if(session_id() == '') {
 
   <div class="sidebar">
   <ul>
-       <a href="myaccount">
+       <a href="myaccount.php">
       <li style="--clr: #2f4aab"> 
       <i class="fa fa-address-card-o" aria-hidden="true"></i>
         <span>Edit Profile</span> 
       </li> </a>
-      <a href="order_history">
+      <a href="order_history.php">
       <li style="--clr: #f1cc52">
       <i class="fa fa-history" aria-hidden="true"></i>
         <span>Order History</span>
       </li> </a>
-      <a href="address_book">
+      <a href="address_book.php">
       <li style="--clr: #2f4aab">
       <i class="fa fa-address-book-o" aria-hidden="true"></i>
         <span>Address Book</span>
       </li> </a>
-      <a href="wishlist">
+      <a href="wishlist.php">
       <li style="--clr: #f1cc52 ">
       <i class="fa fa-heart" aria-hidden="true"></i>
         <span>Wishlist</span>

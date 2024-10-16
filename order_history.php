@@ -8,22 +8,22 @@ include "header.php" ?>
 
   <div class="sidebar">
   <ul>
-       <a href="myaccount">
+       <a href="myaccount.php">
       <li style="--clr: #2f4aab"> 
       <i class="fa fa-address-card-o" aria-hidden="true"></i>
         <span>Edit Profile</span> 
       </li> </a>
-      <a href="order_history">
+      <a href="order_history.php">
       <li style="--clr: #f1cc52">
       <i class="fa fa-history" aria-hidden="true"></i>
         <span>Order History</span>
       </li> </a>
-      <a href="address_book">
+      <a href="address_book.php">
       <li style="--clr: #2f4aab">
       <i class="fa fa-address-book-o" aria-hidden="true"></i>
         <span>Address Book</span>
       </li> </a>
-      <a href="wishlist">
+      <a href="wishlist.php">
       <li style="--clr: #f1cc52 ">
       <i class="fa fa-heart" aria-hidden="true"></i>
         <span>Wishlist</span>
@@ -36,13 +36,13 @@ include "header.php" ?>
 		
                         <?php
                                 require('conn.php');
-                                if($conn1 === false){
+                                if($conn === false){
                                    die("ERROR: Could not connect. "
                                       . mysqli_connect_error());
                                     }
                                     $ID = $_SESSION["ID"];
                                     $sql1 = "SELECT * FROM orders WHERE user_id = '$ID'";
-                                    $result1 = $conn1->query($sql1); 
+                                    $result1 = $conn->query($sql1); 
                                     if ($result1->num_rows > 0) {
                                 ?>
 									                <table  border="2" class="table1" >
@@ -64,12 +64,12 @@ include "header.php" ?>
                                     <tr>
                                     <td class="counterCell">]</td>
                                     <td># <?php echo $row1["ID"]; ?></td>
-                                    <td>Rs <?php echo $row1["grand_total"];?> </td>
+                                    <td>$ <?php echo $row1["grand_total"];?> </td>
                                     <td><?php echo $row1["order_date"];?> </td>
                                     <td><?php echo $row1["shipping_method"];?> </td>
                                     <td><?php echo $row1["payment_type"];?> </td>
                                     <td><?php echo $row1["status"];?> </td>
-                                    <td align="center"><a href='ordered_product'><i class="fa fa-eye" aria-hidden="true"></i> View</a></td>
+                                    <td align="center"><a href='ordered_product.php'><i class="fa fa-eye" aria-hidden="true"></i> View</a></td>
                                      </tr>
                                      <?php } ?> 
                                     </tbody>

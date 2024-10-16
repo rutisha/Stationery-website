@@ -1,0 +1,299 @@
+.dropdown {
+    display: inline-block;
+     position: relative;
+   }
+   .sub-item{
+       display: none;
+       position:relative;
+       width: 100%;
+       overflow: auto;
+       box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+       z-index: 1;
+   }
+   .dropdown:hover .sub-item {
+          display: block;
+   }
+   .sub-item a {
+       display: block;
+       color: #FFFFFF;
+       width:250px;
+       background-color: #222e3c;
+       padding: 5px;
+       padding-left: 25px;
+       padding-right: 25px;
+       text-decoration: none;
+   }
+   .sub-item a:hover {
+            color: #FFFFFF;
+            background-color: #386375;
+   }
+   .table th {
+       border: 2px solid;
+    }
+   .table{
+       border-bottom-width: 1px;
+    }
+   .table td{
+       border: 2px #dee2e6 solid;
+       border-collapse: collapse;
+    }
+    #save{
+        width: 80px;
+        background-color:#386375;
+        color: #FFFFFF;
+        border-radius: 5px;
+        border-color:#386375;
+        margin-left: 15px;
+    }
+    #save:hover{
+       background-color: #325767;
+    }
+    #cname{
+        width: 600px;
+        height: 30px;
+    }
+    #pname, #price, #qty, #ctg{
+        width: 300px;
+        height: 30px;
+    }
+    
+    #ptitle{
+        text-indent: 302px;
+    }
+    
+    #ptitle1{
+        text-indent: 283px;
+    }
+    #ptitle3{
+        text-indent: 335px;
+    }
+    #submit{
+        width: 120px;
+        height: 40px;
+        background-color:#386375;
+        color: #FFFFFF;
+        border-radius: 5px;
+        border-color:#386375;
+        font-size: large;
+        margin-left: 280px;
+    }
+    #submit:hover{
+        background-color: #325767;
+     }
+    .pform{
+        margin-left: 70px;
+        margin-top: 30px;
+    }
+    .pform1{
+        margin-left: 70px;
+        margin-top: 30px;
+        height: 300px;
+    }
+    .pform3{
+        margin-left: 70px;
+        border-top: 2px #dee2e6 solid;
+        margin-right: 30px;
+        padding: 10px;
+        font-size: medium;
+        
+    }
+    #title{
+        width: 600px;
+        height: 30px;
+    }
+    #parent{
+        width: 300px;
+        height: 30px;
+    }
+    #parentid{
+        width: 15px;
+        height: 15px;
+    }
+    .eform{
+        margin-left: 30px;
+        margin-top: 10px;
+    }
+    #sub{  
+        width: 120px;
+        height: 40px;
+        background-color:#386375;
+        color: #FFFFFF;
+        border-radius: 5px;
+        border-color:#386375;
+        font-size: large;
+    }
+    #sub:hover{
+        background-color: #325767;
+     }
+    #name, #email, #psw, #rname, #pro{
+        width: 300px;
+        height: 30px;
+    }
+    
+    #url, #txt{
+        width: 400px;
+        height: 30px;
+    }
+    #ptitle2{
+        text-indent: 353px;
+    }
+#furl,#wurl,#iurl,#yurl, #subject, #ques{
+    width:600px;
+    height:30px;
+}
+.table1{
+    display: block;
+    overflow-x: auto;
+    white-space: inherit;
+    border-bottom-width: 1px;
+}
+.table1 th {
+    border: 2px solid #dee2e6;
+ }
+.table1 td{
+    border: 2px solid #dee2e6;
+    border-collapse: collapse;
+ }
+ 
+.info_contact a{
+    color: #FFFFFF !important;
+}
+
+
+/*subscrbing msg*/
+/* .popup{
+    padding: 8px;
+    margin-bottom: 13px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    width: 250px;
+    height: 40px;
+
+}
+.popup_info{
+    border-color: #bce8f1;
+} */
+#message{
+    color: #0b388f;
+    font-family: inherit;
+    font-size: 17px;
+    background-color: #d9edf7;
+    text-align: center;
+    
+}
+#email{
+    width: 265px;
+    height: 40px;
+}
+#email1{
+    width: 300px;
+    height: 40px;
+}
+#newsub{
+    padding: 8px 35px;
+    outline: none;
+    border: none;
+    color: #ffffff;
+    background: #f1cc52;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+
+/* admin side order page */
+.address{
+    margin-top: 10px;
+    padding-left: 10px;
+    line-height: 35px;
+    border-left: 2px solid #dee2e6;
+}
+.card-header{
+    margin-top: 40px;
+    margin-left: 16px;
+    display: flex;
+}
+.table2{
+    display: block;
+    width: 60%;
+    height: fit-content;
+    white-space: inherit;
+    border-bottom-width: 1px;
+    padding-right: 20px;
+}
+.table2 th {
+    border-bottom: 2px solid #dee2e6;
+    padding: 5px;
+ }
+.table2 td{
+    border-bottom: 2px solid #dee2e6;
+    border-collapse: collapse;
+    text-align: center;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    
+ }
+ .delivery{
+    margin-left: 35px;
+ }
+ #name{
+    font-size: medium;
+ }
+ #space{
+    padding-left:230px ;
+ }
+#back{
+    width: 90px;
+    height: 40px;
+    background-color:#386375;
+    color: #FFFFFF;
+    border-radius: 5px;
+    border-color:#386375;
+    font-size: medium;
+}
+
+/* Dashboard */
+.card_title{
+    font-size: 25px;
+    color: #939ba2;
+    font-weight: 600;
+}
+.card-header1{
+    margin: 30px 0px;
+    margin-left: 10px;
+    display: flex;
+}
+.card_title1{
+    font-size: 15px;
+    color: #939ba2;
+    font-weight: 600;
+}
+.display{
+    width: auto;
+    padding: 0px 10px;
+}
+.line{
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    border-top:1px #dee2e6 solid ;
+}
+.line .line_img{
+    width: 70px;
+    height: 60px;
+    border: 2px #dee2e6 solid;
+    object-fit: contain;
+    
+}
+.line #pro_name {
+    padding-left: 10px;
+    margin-top: 17px;
+    width: 150px;
+}
+.line #pro_price{
+    float: right;
+    margin-top: 17px;
+    padding-left: 20px;
+    width: 80px;
+}
+.container-fluid a:hover{
+    text-decoration: none;
+}

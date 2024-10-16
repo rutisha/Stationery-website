@@ -2,7 +2,7 @@
 if(session_id() == '') {
   session_start();
 } 
-$conn = mysqli_connect("localhost", "root", "", "s4u");
+require('conn.php');
 if($conn == false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
     }

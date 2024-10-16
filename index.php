@@ -3,6 +3,39 @@ if(session_id() == '') {
   session_start();
 }      
          ?>
+<?php
+if(isset($_SESSION['uname'])) {
+if(!isset($_GET["action"])) {
+        require('conn.php');
+        $Userid = $_SESSION["ID"];
+        $sql2 ="SELECT * FROM `wishlist` WHERE userid = $Userid";
+        $result2 = mysqli_query($conn,$sql2);
+        
+        if(mysqli_num_rows($result2) > 0){
+            foreach ( $result2 as $row2 ) {
+                $_SESSION["wishlist"] = unserialize($row2['wishlist_data']);
+              } }
+              else{
+               //echo "ERROR";
+               }
+            } 
+          
+            if(!isset($_GET["action"])) {
+            $Userid = $_SESSION["ID"];
+            $sql2 ="SELECT * FROM `cart` WHERE userid = $Userid";
+            $result2 = mysqli_query($conn,$sql2);
+            if(mysqli_num_rows($result2) > 0){
+                foreach ( $result2 as $row2 ) {
+                    $_SESSION["cart"] = unserialize($row2['cart_data']);
+                  } }
+                  else{
+                   //echo "ERROR";
+                   }} else{
+                    //echo "<center><b>Not Found</b></center>";
+                   }
+          }
+        
+         ?>
 <?php include 'header.php';?>
 
 <?php 
@@ -340,46 +373,6 @@ if(session_id() == '') {
     });
   </script>
  
- 
-   
-  
- <script>
-var owl = $('#brand-carousel');
-owl.owlCarousel({
-   items:6,
-    loop:true,
-    margin:15,
-    singleItem: true,
-    responsiveClass:true,
-    autoplay:true,
-    autoplayTimeout:1000,
-    responsive:{
-                0:{
-                    items: 1,
-                    dots: true
-                },
-                200:{
-                    items: 2,
-                    dots: true
-                },
-                400:{
-                    items: 3,
-                    dots: true,
-                    
-                },
-                600:{
-                    items: 4,
-                    dots: true
-                },
-                900:{
-                    items: 5,
-                    dots: true
-                },
-                1200:{
-                    items: 6
-                }
-            }
-});
-  </script>
+
 </body>
 </html>

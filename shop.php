@@ -19,8 +19,8 @@ foreach($_SESSION['cart'] as $k=>$v)
     $total = $total + ($v["product_price"]*$v["item_quantity"]);
 }
  
- if($total<150) { ?>
-    <?php echo $total+ 20; ?>
+ if($total<50) { ?>
+    <?php echo $total+ 10; ?>
 <?php  } else { ?>
     <?php echo $total; ?>
 <?php } ?>

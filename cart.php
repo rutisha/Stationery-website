@@ -79,9 +79,9 @@ if(session_id() == '') {
                         <div class="row main align-items-center">
                             <div class="combo">
                              <div class="line">
-                            <div class="pic"><img class="img_fluid" src="./admin/static/<?php echo $values['product_image']; ?>"></div>
+                            <div class="pic"><img class="img_fluid" src="<?php echo $values['product_image']; ?>"></div>
                             <div class="pro_name">
-                                <a href="prodetail?id=<?php echo $values["product_id"]; ?>"><?php echo $values["product_name"]; ?></a>
+                                <a href="prodetail.php?id=<?php echo $values["product_id"]; ?>"><?php echo $values["product_name"]; ?></a>
                             </div> 
                             <div class="myform">
 
@@ -95,11 +95,11 @@ if(session_id() == '') {
 
                             <div class="line2">
                             
-                            <span class="hide">Price:</span><div>Rs <?php echo $values["product_price"];?> </div>
+                            <span class="hide">Price:</span><div>$ <?php echo $values["product_price"];?> </div>
                            
-                            <span class="hide">Subtotal:</span><div  id="subtotal_<?php echo $values['product_id']; ?>">Rs <?php echo ($values["product_price"] * $values["item_quantity"]);?> </div>
+                            <span class="hide">Subtotal:</span><div  id="subtotal_<?php echo $values['product_id']; ?>">$ <?php echo ($values["product_price"] * $values["item_quantity"]);?> </div>
                            
-                             <div><span ><a href="cart?action=delete&id=<?php echo $values["product_id"]; ?>" class="close">
+                             <div><span ><a href="cart.php?action=delete&id=<?php echo $values["product_id"]; ?>" class="close">
                             <i class="fa fa-window-close" aria-hidden="true"></i> </a>
                           </span></div>
                           </div> </div>
@@ -118,14 +118,14 @@ if(session_id() == '') {
                     <hr>
                     <div class="row">
                         <div class="col" style="padding-left:15px;"><?php echo count($_SESSION["cart"]); ?> ITEMS</div>
-                        Rs<div id="total"> <?php echo $total ?></div>
+                        $<div id="total"> <?php echo $total ?></div>
                     </div>
                        
                     <div id="delivery">
                        <?php if($total<150) { ?>
-                               <br> <p>* Minimum order of Rs 150 is required for free delivery *</p>
+                               <br> <p>* Minimum order of $ 50 is required for free delivery *</p>
                               <input type="radio" id="free" name="free_delivery" value="free_delivery" checked = true>
-                              <label id="delivery">Delivery Charge-Rs 20</label><br><br>
+                              <label id="delivery">Delivery Charge-$ 10</label><br><br>
 
                          <?php  } else { ?>
                                  <input type="radio" id="charge" name="delivery" value="delivery_charge" checked = true>
@@ -143,9 +143,9 @@ if(session_id() == '') {
                         
                     
                     <div class="row del_show" style="border-top: 2px solid rgba(0,0,0,.1); padding: 2vh 0;margin-top:20px;">
-                    <?php if($total<150) { ?>
+                    <?php if($total<50) { ?>
                           <div class="col">Delivery Charge: </div>
-                          <div class="del_display"> <?php  echo "+ Rs 20"; ?> </div>
+                          <div class="del_display"> <?php  echo "+ $ 10"; ?> </div>
                     <?php  } else {} ?>
                      </div>
 
@@ -169,9 +169,9 @@ if(session_id() == '') {
 
                    <div class="row">
                     <div class="col">TOTAL PRICE</div>
-                        Rs <div  id="total1">
-                        <?php if($total<150) { ?>
-                             <?php echo $total + 20 ?>
+                        $ <div  id="total1">
+                        <?php if($total<50) { ?>
+                             <?php echo $total + 10 ?>
                             <?php  } else { 
                                 $sum = $total;
                                 if($values["percent"]!= 0){
@@ -182,7 +182,7 @@ if(session_id() == '') {
                             <?php } ?>
                         </div>
                     </div>
-                   <div class="checkout"> <a href="checkout"><button class="chk-btn">CHECKOUT</button></a> </div> 
+                   <div class="checkout"> <a href="checkout.php"><button class="chk-btn">CHECKOUT</button></a> </div> 
                 </div> 
             </div>
                       
@@ -201,7 +201,7 @@ if(session_id() == '') {
     $('.quantity').on('click', '.plus', function(e) {
         let $input = $(this).prev('input.qty');
         let val = parseInt($input.val());
-        if (val < 20) {
+        if (val < 10) {
         $input.val( val+1 ).change();
       // var test = console.log(val+1);
      } else {

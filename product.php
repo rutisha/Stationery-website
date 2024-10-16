@@ -22,7 +22,7 @@ include 'header.php';?>
       <div class="row">
         <?php  while($row = $result->fetch_assoc()) {  ?>
            <div class="col-sm-6 col-lg-4 probox morebox" style="display:none;" >
-           <form method="post" action="cart?action=add&id=<?php echo $row["ID"]; ?>">
+           <form method="post" action="cart.php?action=add&id=<?php echo $row["ID"]; ?>">
              <div class="box">
              
                 <div class="img-box" >
@@ -45,7 +45,7 @@ include 'header.php';?>
                    if(isset($_SESSION["wishlist"])){
                    $item_array_id = array_column($_SESSION["wishlist"], 'product_id'); 
                  if(in_array($row["ID"], $item_array_id)) {?>
-                <div class="heart_container icon_<?php echo $row["ID"]; ?>" id="<?php echo $row["ID"]; ?>" >
+                <div class="star_container icon_<?php echo $row["ID"]; ?>" id="<?php echo $row["ID"]; ?>" >
                  <i class="fa fa-heart" aria-hidden="true" style="color:red;"></i>
                 </div>
                 <?php } else{ ?>
@@ -74,7 +74,7 @@ include 'header.php';?>
 
   
   <?php include 'footer.php';?>
-  <script>
+  <!-- <script>
     jQuery(document).ready(($) => {
         
     $('.star_container').on('click',  function(e) {
@@ -87,7 +87,9 @@ include 'header.php';?>
               data: data,
               success: function(data) {
                  console.log(data);
-                 $(".star_container.icon_"+id).html(data);
+                // $(".star_container.icon_"+id).html(data);
+                 $(".star_container.icon_"+id).html('<i class="fa fa-heart-o"  aria-hidden="true" ></i>')
+                 $(".star_container.icon_"+id).removeClass('added');
               }
               
             });
@@ -108,10 +110,52 @@ include 'header.php';?>
               success: function(data) {
                  console.log(data);
                  $(".heart_container.icon_"+id).html(data);
+               
               }
               
             });
     });
+    });
+  </script> -->
+  <script>
+    jQuery(document).ready(($) => {
+        
+    $('.star_container').on('click',  function(e) {
+          var data;
+          var id = this.id;
+        if($(this).hasClass("added")){
+          $.ajax({
+              type: "GET",
+              dataType: "text",
+              url: "deletewish.php?id="+id, 
+              data: data,
+              success: function(data) {
+                console.log(data);
+                //$(".star_container.icon_"+id).html(data);
+                $(".star_container.icon_"+id).html('<i class="fa fa-heart-o"  aria-hidden="true" ></i>')
+                $(".star_container.icon_"+id).removeClass('added');
+              }
+              
+            });
+        } else {
+          $.ajax({
+              type: "GET",
+              dataType: "text",
+              url: "wish.php?id="+id, 
+              data: data,
+              success: function(data) {
+                console.log(data);
+                //$(".star_container.icon_"+id).html(data);
+                $(".star_container.icon_"+id).html('<i class="fa fa-heart"  aria-hidden="true" style="color:red;"></i>');
+                $(".star_container.icon_"+id).addClass('added');
+                
+              }
+              
+            });
+
+        }
+    });
+    
     });
   </script>
   

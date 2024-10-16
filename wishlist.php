@@ -40,12 +40,12 @@ include 'header.php';?>
                 <div class="close">
                
                       <div class="close_container">
-                       <a href="wishlist?action=delete&id=<?php echo $values["product_id"]; ?>"> <i class="fa fa-times" aria-hidden="true"></i> </a>
+                       <a href="wishlist.php?action=delete&id=<?php echo $values["product_id"]; ?>"> <i class="fa fa-times" aria-hidden="true"></i> </a>
                       </div>
 
                  </div>
                 <div class="img-box" >
-                <img src="./admin/static/<?php echo  $values['product_image']; ?>" alt="">
+                <img src="<?php echo  $values['product_image']; ?>" alt="">
                 <a href="cart?action=add&id=<?php echo $values["product_id"]; ?>" class="add_cart_btn">
                       <span>
                       <input type="submit" name="add"  class="btn btn-default" style="color:white;" value="Add to Cart">
@@ -55,11 +55,11 @@ include 'header.php';?>
                 </div>
                 <div class="detail-box">
                 <h5>
-                <a href="prodetail?id=<?php echo $values["product_id"]; ?>"><?php echo $values["product_name"]; ?> </a>
+                <a href="prodetail.php?id=<?php echo $values["product_id"]; ?>"><?php echo $values["product_name"]; ?> </a>
                 </h5>
                   <div class="product_info">
                     <h5>
-                        <span>Rs</span> <?php echo $values["product_price"]; ?>
+                        <span>$</span> <?php echo $values["product_price"]; ?>
                     </h5>
                      
                   </div>
@@ -72,7 +72,7 @@ include 'header.php';?>
       <?php }else{ ?>
           <div class="empty">Your wishlist is Empty!! <br>
             <img src="images/crying-penstand.jpg" width="210px" height="260px"> <br>
-            <button class="shop-btn"><a href="product"> Continue Shopping</a></button>
+            <button class="shop-btn"><a href="product.php"> Continue Shopping</a></button>
           </div>
        <?php  }  ?>
        
@@ -111,11 +111,11 @@ include 'header.php';?>
                        'product_image' => $image
                    ); 
                    $_SESSION["wishlist"][$count] = $item_array;
-                  echo '<script>window.location="wishlist"</script>';
+                  echo '<script>window.location="wishlist.php"</script>';
                } 
                else {
                    echo '<script>alert("Products already added to wishlist")</script>';
-                   echo '<script>window.location="wishlist"</script>';
+                   echo '<script>window.location="wishlist.php"</script>';
                }
           //  } else {
           //          $item_array = array(
@@ -135,7 +135,7 @@ include 'header.php';?>
                    if($values["product_id"] == $_GET["id"]) {
                        unset($_SESSION["wishlist"][$keys]);
                       //  echo '<script>alert("Product has been removed")</script>';
-                       echo '<script>window.location="wishlist"</script>';
+                       echo '<script>window.location="wishlist.php"</script>';
                        $_SESSION["wishlist"] = array_merge($_SESSION["wishlist"]); 
             
                    }

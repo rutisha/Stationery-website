@@ -37,7 +37,7 @@ $id = $_GET['id'];
            
      
 if(isset($_SESSION["wishlist"])) {
-  require('conn.php');
+require('conn.php');
 // Check connection
 if($conn === false){
 die("ERROR: Could not connect. "    . mysqli_connect_error());

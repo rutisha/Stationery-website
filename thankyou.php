@@ -11,7 +11,7 @@ include "header.php" ?>
  <img src= "images/tickmark.png"  width= "100px" height="100px"> <br><br>
   <h1>THANK YOU!!</h1>
   <p>Your order will delivered soon at your address..</p> <br>
-  <button class="shop-btn"><a href="product"> Continue Shopping</a></button> <br><br> <br><br>
+  <button class="shop-btn"><a href="product.php"> Continue Shopping</a></button> <br><br> <br><br>
   <div class="row border-bottom"></div><br>
   <p> Send Feedback and follow us on below links</p>
     <div class="buttons">

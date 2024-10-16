@@ -24,7 +24,7 @@ include "header.php"; ?>
       <span>Country: <span class="required">*</span></span>
       <select name="selection">
         <option value="select">Select a country...</option>
-        <option value="India">India</option>
+        <option value="India">Canada</option>
       </select>
     </label>
     <label class="entry">
@@ -115,14 +115,14 @@ else{
       <?php foreach($_SESSION["cart"] as $values) {
       ?>
       <tr>
-        <td><img class="img_fluid" src="./admin/static/<?php echo $values['product_image']; ?>">&nbsp;<?php echo $values["product_name"]; ?> x <?php echo $values["item_quantity"];?>pc</td>
-        <td>Rs <?php echo ($values["product_price"] * $values["item_quantity"]);?> </td>
+        <td><img class="img_fluid" src="<?php echo $values['product_image']; ?>">&nbsp;<?php echo $values["product_name"]; ?> x <?php echo $values["item_quantity"];?>pc</td>
+        <td>$ <?php echo ($values["product_price"] * $values["item_quantity"]);?> </td>
       </tr>
       <?php $total = $total + ($values["item_quantity"] * $values["product_price"]); }  ?>
       
       <tr>
       <td>Sub Total:</td>
-       <td>Rs <?php echo $total; ?></td>
+       <td>$ <?php echo $total; ?></td>
       </tr> 
   
       <?php if($values["percent"] != 0) { ?>
@@ -134,7 +134,7 @@ else{
 
       <tr>
       <td>Shipping Charge : </td>
-        <td><?php if($total<150){ echo "Rs 20";} else {echo "Free Delivery"; }?></td>
+        <td><?php if($total<150){ echo "$ 10";} else {echo "Free Delivery"; }?></td>
         
       </tr>
       <?php  $Percent = $values["percent"];
@@ -142,9 +142,9 @@ else{
             $sum = $sum - (($sum/100)*$Percent); ?>
       <tr>
       <td>Grand Total :</td>
-        <td>Rs  
-          <?php if($total<150) 
-               { $Grand_Total = $total + 20; 
+        <td>$ 
+          <?php if($total<50) 
+               { $Grand_Total = $total + 10; 
                echo $Grand_Total;  } 
                else {
                echo round($sum); } ?>
@@ -158,7 +158,7 @@ else{
     </table><br>
      <?php } else {  }?>
     </div> <br>
-    <a href="thankyou"><input type="submit" class="plc" name="Submit" value="Submit" id="Submit" onClick="myFunction()"></a> <br><br>
+    <a href="thankyou.php"><input type="submit" class="plc" name="Submit" value="Submit" id="Submit" onClick="myFunction()"></a> <br><br>
     <?php
      
      if($conn === false){
@@ -186,8 +186,8 @@ else{
         $Percent = $values["percent"];
         $sum = $total;
         $sum = $sum - (($sum/100)*$Percent);
-        if($total<150) 
-               { $Grand_Total = $total + 20; 
+        if($total<50) 
+               { $Grand_Total = $total + 10; 
                 } 
                else {
                $Grand_Total = round($sum); 
@@ -259,7 +259,7 @@ else{
           } } } ?>
 
           <script>
-           window.location.href="thankyou";
+           window.location.href="thankyou.php";
           </script>
 
        <?php }}
