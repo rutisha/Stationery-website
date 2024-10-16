@@ -10,8 +10,8 @@ foreach($_SESSION['cart'] as $key => $val)
         $Sub_Total = $val["product_price"] * $new_value; 
         $total = $total + ($val["product_price"]*$val["item_quantity"]);
     } 
- if($total<150) { ?>
+ if($total<50) { ?>
     <div class="col">Delivery Charge: </div>
-    <div class="del_display"> <?php  echo "+ Rs 20"; ?> </div>
+    <div class="del_display"> <?php  echo "+ $ 10"; ?> </div>
          <?php  } else {} ?>
 

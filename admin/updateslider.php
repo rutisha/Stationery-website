@@ -47,12 +47,7 @@ session_start();
 		</div>
 	</div>
     <?php
-     $conn = mysqli_connect("localhost", "root", "root", "s4u");
-      
-     if($conn === false){
-         die("ERROR: Could not connect. "
-             . mysqli_connect_error()); }
-      
+    require('conn.php');
      $ID = $_GET['id'];
      $Url = $_REQUEST['url'];
      $Text = $_REQUEST['txt'];

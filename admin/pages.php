@@ -45,12 +45,7 @@ session_start();
 			
 			<?php include('footer.php'); ?>
             <?php
-     $conn = mysqli_connect("localhost", "root", "root", "s4u");
-         
-     if($conn === false){
-         die("ERROR: Could not connect. "
-             . mysqli_connect_error());
-     }
+     require('conn.php');
      if(isset($_POST['Submit'])){
      
         function slugify($slug){

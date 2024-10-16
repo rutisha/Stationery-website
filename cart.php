@@ -122,10 +122,10 @@ if(session_id() == '') {
                     </div>
                        
                     <div id="delivery">
-                       <?php if($total<150) { ?>
+                       <?php if($total<50) { ?>
                                <br> <p>* Minimum order of $ 50 is required for free delivery *</p>
                               <input type="radio" id="free" name="free_delivery" value="free_delivery" checked = true>
-                              <label id="delivery">Delivery Charge-$ 10</label><br><br>
+                              <label id="delivery">Delivery Charge- $10</label><br><br>
 
                          <?php  } else { ?>
                                  <input type="radio" id="charge" name="delivery" value="delivery_charge" checked = true>
@@ -133,13 +133,13 @@ if(session_id() == '') {
 
                            <?php } ?> </div> 
                          
-                        <div class="discount">
+                        <!-- <div class="discount">
                          <p>DISCOUNT CODE: </p> 
                        
                         <input id="code" name= "code"  placeholder="Enter your code">
                         <button class="apply-btn" type="button">Apply Code</button>
                         <div id="display"></div>
-                         </div>
+                         </div> -->
                         
                     
                     <div class="row del_show" style="border-top: 2px solid rgba(0,0,0,.1); padding: 2vh 0;margin-top:20px;">

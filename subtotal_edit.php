@@ -11,5 +11,5 @@ foreach($_SESSION['cart'] as $key => $val)
     }   
 }    
 ?>
-Rs <?php echo $Sub_Total; ?>
+$ <?php echo $Sub_Total; ?>
 

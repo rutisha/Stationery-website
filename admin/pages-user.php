@@ -19,11 +19,7 @@ session_start();//session starts here
 	                    	<div class="card">
 		                    	<div class="card-header">
 			<?php
-			$conn = mysqli_connect("localhost", "root", "root", "s4u");
-			if($conn === false){
-			   die("ERROR: Could not connect. "
-				  . mysqli_connect_error());
-				}
+			    require('conn.php');
 				$sql = "SELECT * FROM userdata";
 				$result = $conn->query($sql); 
 				if ($result->num_rows > 0) {
@@ -67,11 +63,7 @@ session_start();//session starts here
 
 <?php include('footer.php'); ?>
             <?php
-    $conn = mysqli_connect("localhost", "root", "root", "s4u");
-    if($conn === false){
-        die("ERROR: Could not connect. "
-         . mysqli_connect_error());
-    }
+    require('conn.php');
     if(isset($_GET['id']))
     {
     $ID = $_GET['id'];

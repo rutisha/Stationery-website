@@ -53,12 +53,7 @@ session_start();
 		</div>
 	</div>
     <?php
-     $conn = mysqli_connect("localhost", "root", "root", "s4u");
-      
-     if($conn === false){
-         die("ERROR: Could not connect. "
-             . mysqli_connect_error()); }
-
+    require('conn.php');
              function slugify($slug){
                 $newslug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $slug), '-'));
                 return $newslug;

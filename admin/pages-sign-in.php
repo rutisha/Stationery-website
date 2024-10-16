@@ -79,12 +79,7 @@ session_start();//session starts here
 		</div>
 	</main>
     <?php
-        $conn = mysqli_connect("localhost", "root", "root", "s4u");
-        // Check connection
-        if($conn === false){
-            die("ERROR: Could not connect. "
-                . mysqli_connect_error());
-        }
+        require('conn.php');
         if(isset($_POST['signin'])){
         $Username = $_POST['uname'];  
         $Password = $_POST['pwd'];  

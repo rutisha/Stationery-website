@@ -34,7 +34,7 @@ include 'header.php';?>
       <div class="row">
         <?php    foreach($_SESSION["wishlist"] as $values) { ?>
            <div class="col-sm-6 col-lg-4 probox morebox" style="display:none;" >
-           <form method="post" action="cart?action=add&id=<?php echo $values["product_id"]; ?>">
+           <form method="post" action="cart.php?action=add&id=<?php echo $values["product_id"]; ?>">
              <div class="box">
                 <div class="wishlist">
                 <div class="close">
@@ -46,7 +46,7 @@ include 'header.php';?>
                  </div>
                 <div class="img-box" >
                 <img src="<?php echo  $values['product_image']; ?>" alt="">
-                <a href="cart?action=add&id=<?php echo $values["product_id"]; ?>" class="add_cart_btn">
+                <a href="cart.php?action=add&id=<?php echo $values["product_id"]; ?>" class="add_cart_btn">
                       <span>
                       <input type="submit" name="add"  class="btn btn-default" style="color:white;" value="Add to Cart">
                       </span>

@@ -46,7 +46,7 @@ session_start();
 		</div>
 	</div>
     <?php
-     $conn = mysqli_connect("localhost", "root", "root", "s4u");
+    require('conn.php');
       
      if($conn === false){
          die("ERROR: Could not connect. "

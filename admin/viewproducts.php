@@ -20,11 +20,7 @@ session_start();
 							<div class="card">
 								<div class="card-header">
                                 <?php
-                                $conn = mysqli_connect("localhost", "root", "root", "s4u");
-                                if($conn === false){
-                                   die("ERROR: Could not connect. "
-                                      . mysqli_connect_error());
-                                    }
+                                require('conn.php');
                                     $sql = "SELECT * FROM products";
                                     $result = $conn->query($sql); 
                                     if ($result->num_rows > 0) {
@@ -74,11 +70,7 @@ session_start();
 		</div>
 	</div>
     <?php
-    $conn = mysqli_connect("localhost", "root", "root", "s4u");
-    if($conn === false){
-        die("ERROR: Could not connect. "
-         . mysqli_connect_error());
-    }
+   require('conn.php');
     if(isset($_GET['id']))
     {
     $ID = $_GET['id'];

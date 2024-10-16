@@ -19,14 +19,10 @@ session_start();
 							<div class="card">
 								<div class="card-header">
                                 <?php
-                                $conn1 = mysqli_connect("localhost", "root", "root", "s4u");
-                                if($conn1 === false){
-                                   die("ERROR: Could not connect. "
-                                      . mysqli_connect_error());
-                                    }
+                                require('conn.php');
                                     $OrderId = $_GET["id"];
                                     $sql1 = "SELECT * FROM `order_line_items` WHERE `order_id`= '$OrderId' ";
-                                    $result1 = $conn1->query($sql1); 
+                                    $result1 = $conn->query($sql1); 
                                     if ($result1->num_rows > 0) {
                                 ?>
 									<table width="100%" class="table2" >
@@ -54,7 +50,7 @@ session_start();
                                     <tr>
                                     <?php
                                          $ID = $_GET["id"];
-                                         $conn = mysqli_connect("localhost", "root", "root", "s4u");
+                                         require('conn.php');
                                          $sql = "SELECT * FROM `orders` WHERE ID = '$ID'";
                                          $result = $conn->query($sql);
                                          $row = mysqli_fetch_array($result); ?>
@@ -62,7 +58,7 @@ session_start();
                                          <td></td>
                                          <td></td>
                                          <td><b>TOTAL :</b></td>
-                                        <td> <label><b>  Rs  <?php echo "$row[grand_total]"?></b></label></td>
+                                        <td> <label><b>  $  <?php echo "$row[grand_total]"?></b></label></td>
                                     </tr>
                                     </table>
                                     <?php } 
@@ -71,7 +67,7 @@ session_start();
                                      <div class="address">
                                      <?php
                                          $User_ID = $_GET["user_id"];
-                                         $conn = mysqli_connect("localhost", "root", "root", "s4u");
+                                         require('conn.php');
                                          $sql = "SELECT * FROM `order_meta` WHERE user_id = '$User_ID'";
                                          $result = $conn->query($sql);
                                          $row = mysqli_fetch_array($result); ?>
@@ -91,7 +87,7 @@ session_start();
                                     <div class="delivery">
                                     <?php
                                          $ID = $_GET["id"];
-                                         $conn = mysqli_connect("localhost", "root", "root", "s4u");
+                                         require('conn.php');
                                          $sql = "SELECT * FROM `orders` WHERE ID = '$ID'";
                                          $result = $conn->query($sql);
                                          $row = mysqli_fetch_array($result); ?>
@@ -133,11 +129,7 @@ session_start();
 
 		<?php include('footer.php'); ?>
         <?php
-     $conn = mysqli_connect("localhost", "root", "root", "s4u");
-      
-     if($conn === false){
-         die("ERROR: Could not connect. "
-             . mysqli_connect_error()); }
+    require('conn.php');
              
     if(isset($_POST['Submit'])){
 

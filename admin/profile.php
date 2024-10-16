@@ -23,7 +23,7 @@ session_start();//session starts here
 						</div>
                         <?php
                         $ID = $_GET["id"];
-                        $conn = mysqli_connect("localhost", "root", "root", "s4u");
+                        require('conn.php');
                         $sql = " SELECT * FROM admin WHERE ID ='$ID' ";
                         $result = $conn->query($sql);
                         $row = mysqli_fetch_array($result); ?>
@@ -65,11 +65,7 @@ session_start();//session starts here
 
 <?php include('footer.php'); ?>
             <?php
-    $conn = mysqli_connect("localhost", "root", "root", "s4u");
-    if($conn === false){
-        die("ERROR: Could not connect. "
-         . mysqli_connect_error());
-    }
+    require('conn.php');
 
     if(isset($_POST['update'])){
     

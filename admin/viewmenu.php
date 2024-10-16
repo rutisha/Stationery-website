@@ -19,13 +19,9 @@ session_start();
 							<div class="card">
 								<div class="card-header">
                                 <?php
-                                $conn1 = mysqli_connect("localhost", "root", "root", "s4u");
-                                if($conn1 === false){
-                                   die("ERROR: Could not connect. "
-                                      . mysqli_connect_error());
-                                    }
+                                require('conn.php');
                                     $sql1 = "SELECT * FROM menu";
-                                    $result1 = $conn1->query($sql1); 
+                                    $result1 = $conn->query($sql1); 
                                     if ($result1->num_rows > 0) {
                                 ?>
 									<table width="50%" border="2" class="table" >
@@ -56,7 +52,7 @@ session_start();
                                     </tbody>
                                     </table>
                                     <?php } 
-                                     $conn1->close(); ?>
+                                     $conn->close(); ?>
 								</div>
 								<div class="card-body">
 								</div>
@@ -84,24 +80,20 @@ session_start();
           });
            </script>
 <?php
-    $conn2 = mysqli_connect("localhost", "root", "root", "s4u");
-    if($conn2 === false){
-        die("ERROR: Could not connect. "
-         . mysqli_connect_error());
-    }
+    require('conn.php');
     if(isset($_GET['id']))
     {
     $ID = $_GET['id'];
 
     $sql2 = "DELETE FROM menu WHERE ID = '$ID' ";
-    if(mysqli_query($conn2, $sql2)){
+    if(mysqli_query($conn, $sql2)){
      echo "Data Deleted Successfully<br>";} 
      else{
      echo "ERROR: Hush! Sorry $sql2. "
-         . mysqli_error($conn2);
+         . mysqli_error($conn);
      }
     }
-     mysqli_close($conn2);
+     mysqli_close($conn);
     ?>
 		</div>
 	</div>
